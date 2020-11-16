@@ -1,0 +1,21 @@
+{
+    "answer": [
+        {
+            "quest": [
+                {"question": "Hola"},
+                {"question": "ola"},
+                {"question": "hola"},
+                {"question": "hey"},
+                {"question": "ey"},
+                {"question": "olis"},
+                {"question": "holis"},
+                {"question": "Holis"}
+            ],
+            "ans": [
+                {"answer": "Hola, en que te puedo ayudar"},
+                {"answer": "Hola, ¿necesitas algo?"},
+                {"answer": "hola, ¿como puedo ayudarte?"}
+            ]
+        }
+    ]
+}
