@@ -21,4 +21,5 @@ six==1.15.0
 soupsieve==2.0.1
 SpeechRecognition==3.8.1
 tzlocal==2.1
+Unidecode==1.1.1
 urllib3==1.26.2

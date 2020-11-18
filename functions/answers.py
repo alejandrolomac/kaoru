@@ -3,35 +3,36 @@ import webbrowser
 import speech_recognition as sr
 import pyaudio
 import json
+import random
 
 with open('functions/answers.json') as file:
     ans = json.load(file)
 
-for dict in ans:
-    if dict['quest'].question == "hola":
-        print(dict['ans'][1].answer)
-
 def question_check(question):
     print("Haz dicho: {}".format(question))
-    if "Amazon" in question:
+    for i in ans['answer']:
+        if question in i['quest']:
+            ansnum = random.randrange(0, len(i['ans']))
+            answer = i['ans'][ansnum]
+            break
+        else:
+            print("entramos al ciclo pero no encontre nada")
+
+    if "amazon" in question:
         webbrowser.open('https://www.amazon.es')
         answer = "Abriendo Amazon"
-    elif "Google" in question:
+    elif "google" in question:
         webbrowser.open('https://www.google.com')
         answer = "Abriendo Google"
-    elif "Youtube" in question:
+    elif "youtube" in question:
         webbrowser.open('https://www.youtube.com')
         answer = "Abriendo Youtube"
-    elif "Vendo en Casa" in question:
+    elif "vendo en casa" in question:
         webbrowser.open('https://www.vendoencasa.net')
         answer = "Abriendo Vendo en Casa"
-    elif "Hola" in question or "hola" in question:
-        answer = "Hola, en que te puedo ayudar"
     elif "quien eres" in question or "quién eres" in question:
         answer = "Soy Kaoru, una Inteligencia Artificial"
     elif "kaoru" in question or "porque que te llamas asi" in question:
         answer = "Me llamo Kaoru, en honor a una de las artistas favoritas de mi creador, Kaouru Mori"
-    else:
-        answer = "no escuche bien, podrias repetirlo"
 
     return answer

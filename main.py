@@ -6,8 +6,10 @@ from difflib import SequenceMatcher as SM
 import random
 import time
 import pyaudio
+import unidecode
 
 from functions.answers import question_check
+from functions.greeting import greeting
 
 r = sr.Recognizer()
 microphone = sr.Microphone(device_index = 0)
@@ -17,7 +19,8 @@ eng.setProperty("rate", 140)
 eng.setProperty("volume", 1.0)
 listVoices = eng.getProperty("voices")
 eng.setProperty("voice", listVoices[2].id)
-eng.say("Hola, soy Kaoru, en que te puedo ayudar")
+
+eng.say(greeting())
 eng.runAndWait()
 
 print("Escuchando...")
@@ -35,7 +38,8 @@ text = ""
 while text != "silencio":
     text = recognizeMicAudio()
     try:
-        eng.say(question_check(text))
+        text = unidecode.unidecode(text)
+        eng.say(question_check(text.lower()))
         eng.runAndWait()
     except:
         eng.say("No entendi bien lo que decias, podrias repetirmelo")
