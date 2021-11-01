@@ -27,12 +27,12 @@ def question_check(question):
     elif "youtube" in question:
         webbrowser.open('https://www.youtube.com')
         answer = "Abriendo Youtube"
-    elif "vendo en casa" in question:
-        webbrowser.open('https://www.vendoencasa.net')
-        answer = "Abriendo Vendo en Casa"
+    elif "terracron" in question:
+        webbrowser.open('https://www.terracron.net')
+        answer = "Abriendo Terracron"
     elif "quien eres" in question or "quién eres" in question:
-        answer = "Soy Kaoru, una Inteligencia Artificial"
-    elif "kaoru" in question or "porque que te llamas asi" in question:
-        answer = "Me llamo Kaoru, en honor a una de las artistas favoritas de mi creador, Kaouru Mori"
+        answer = "Soy Elin, la mejor Inteligencia Artificial"
+    elif "Elin" in question or "porque que te llamas asi" in question:
+        answer = "Me llamo Elin, porque a mi creador le gusta mucho este nombre escandinavo"
 
     return answer

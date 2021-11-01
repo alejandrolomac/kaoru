@@ -18,7 +18,7 @@ eng = pyttsx3.init()
 eng.setProperty("rate", 140)
 eng.setProperty("volume", 1.0)
 listVoices = eng.getProperty("voices")
-eng.setProperty("voice", listVoices[2].id)
+eng.setProperty("voice", listVoices[0].id)
 
 eng.say(greeting())
 eng.runAndWait()
