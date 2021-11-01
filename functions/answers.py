@@ -30,9 +30,5 @@ def question_check(question):
     elif "terracron" in question:
         webbrowser.open('https://www.terracron.net')
         answer = "Abriendo Terracron"
-    elif "quien eres" in question or "quién eres" in question:
-        answer = "Soy Elin, la mejor Inteligencia Artificial"
-    elif "Elin" in question or "porque que te llamas asi" in question:
-        answer = "Me llamo Elin, porque a mi creador le gusta mucho este nombre escandinavo"
 
     return answer
